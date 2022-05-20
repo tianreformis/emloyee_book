@@ -10,6 +10,13 @@ class AddEmployeeScreen extends StatefulWidget {
 class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Add Employee'),
+        centerTitle: true,
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.save))],
+      ),
+      body: Column(children: []),
+    );
   }
 }
