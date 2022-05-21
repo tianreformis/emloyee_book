@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../widget/custom_text_form_field.dart';
+
 class AddEmployeeScreen extends StatefulWidget {
   const AddEmployeeScreen({Key? key}) : super(key: key);
 
@@ -10,7 +12,10 @@ class AddEmployeeScreen extends StatefulWidget {
 }
 
 class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
-  final TextEditingController _controller = TextEditingController();
+  final TextEditingController _userNamecontroller = TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _dateOfBirthcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,33 +27,30 @@ class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
-          TextFormField(
-            controller: _controller,
-            keyboardType: TextInputType.name,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'User name cannot be empty';
-              }
-              return null;
-            },
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              label: Text('Username'),
-            ),
+          CostumTextFormField(
+            controller: _userNamecontroller,
+            txtLabel: 'User Name',
           ),
-          TextFormField(
-            controller: _controller,
-            keyboardType: TextInputType.name,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'User name cannot be empty';
-              }
-              return null;
-            },
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              label: Text('Username'),
-            ),
+          const SizedBox(
+            height: 8.0,
+          ),
+          CostumTextFormField(
+            controller: _firstNameController,
+            txtLabel: 'First Name',
+          ),
+          const SizedBox(
+            height: 8.0,
+          ),
+          CostumTextFormField(
+            controller: _lastNameController,
+            txtLabel: 'Last Name',
+          ),
+          const SizedBox(
+            height: 8.0,
+          ),
+          CostumTextFormField(
+            controller: _dateOfBirthcontroller,
+            txtLabel: 'Date Of Birth',
           )
         ]),
       ),

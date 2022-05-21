@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Home'),
         centerTitle: true,
       ),
-      body: Column(children: []),
+      body: Column(children: const []),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushNamed(context, '/add_employee');
