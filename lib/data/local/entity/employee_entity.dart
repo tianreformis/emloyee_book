@@ -5,5 +5,5 @@ class Employee extends Table {
   TextColumn get userName => text().named('user_name')();
   TextColumn get firstName => text().named('first_name')();
   TextColumn get lastName => text().named('last_name')();
-  TextColumn get dateOfBirth => text().named('date_of_birth')();
+  DateTimeColumn get dateOfBirth => dateTime().named('date_of_birth')();
 }
