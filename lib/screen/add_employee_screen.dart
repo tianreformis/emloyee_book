@@ -1,5 +1,6 @@
 // ignore_for_file: unused_field, unused_local_variable
 
+import 'package:emloyee_book/widget/custom_date_time_picker_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -50,21 +51,12 @@ class _AddEmployeeScreenState extends State<AddEmployeeScreen> {
           const SizedBox(
             height: 8.0,
           ),
-          TextFormField(
-            controller: _dateOfBirthcontroller,
-            keyboardType: TextInputType.name,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              label: Text('Date of Birth'),
-            ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Date of Birth Cannot Be Empty';
-              }
-              return null;
-            },
-            onTap: () => pickDateOfBirth(context),
-          )
+          CustomDatePickerFormField(
+              controller: _dateOfBirthcontroller,
+              txtLabel: 'Date Of Birth',
+              callback: () {
+                pickDateOfBirth(context);
+              })
         ]),
       ),
     );
